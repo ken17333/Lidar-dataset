@@ -81,3 +81,9 @@ All subsequent angle calculations are performed using these adjusted vectors.
 ### 6. Classification Outcome
 By combining the above binary conditions (arm open/close, arm bent/straight, leg apart/together, leg bent/straight, body supine/side-lying),  
 we can categorize human postures into **32 distinct classes**.
+
+### What Defines a Single Data Sample?
+
+Our LiDAR operates at **30 FPS**.  
+To ensure sufficient variation between consecutive actions,  
+we select frames at an interval of approximately **5 frames** (≈ 0.17 seconds).
