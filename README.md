@@ -94,5 +94,6 @@ For training, we used a total of **10,000 images**:
 - **5,000 images without a blanket**  
 - **5,000 images with a blanket**
 
-The dataset was split into **training** and **testing** sets with an **8:2 ratio**,  
+The dataset was **randomly split** into **training** and **testing** sets with an **8:2 ratio**,  
 ensuring that both categories (with and without blanket) were proportionally represented in each subset.
+
