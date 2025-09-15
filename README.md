@@ -87,3 +87,12 @@ we can categorize human postures into **32 distinct classes**.
 Our LiDAR operates at **30 FPS**.  
 To ensure sufficient variation between consecutive actions,  
 we select frames at an interval of approximately **5 frames** (≈ 0.17 seconds).
+
+### What Data Did We Use for Training?
+
+For training, we used a total of **10,000 images**:  
+- **5,000 images without a blanket**  
+- **5,000 images with a blanket**
+
+The dataset was split into **training** and **testing** sets with an **8:2 ratio**,  
+ensuring that both categories (with and without blanket) were proportionally represented in each subset.
