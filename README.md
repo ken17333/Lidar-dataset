@@ -109,7 +109,14 @@ To improve model generalization and increase dataset diversity,
 we applied the following **data augmentation techniques** during training:
 
 - **Random Flipping**: Randomly flipped images to simulate mirrored postures.  
-- **Random Scaling**: Randomly scaled images to account for variations in subject size and distance from the sensor.  
+
+- **Random Scaling (Label-Guided)**:  
+  The scaling operation was performed using the **labeled joint coordinates**.  
+  Specifically, we determined the bounding region of the human body from the annotated keypoints,  
+  then applied random scaling to this region.  
+  This ensures that the augmentation focuses on the human body rather than irrelevant background areas.  
+
 - **Noise Injection**: Added random noise to the input images to enhance robustness against sensor imperfections and environmental disturbances.
+
 
 
