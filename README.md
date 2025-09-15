@@ -20,4 +20,53 @@ In this case, we can leverage the reference distance information obtained earlie
 - Since the **shoulders are almost always visible**, we can use the distances between **shoulders, elbows, and hips** as fixed references.  
 - These stable reference distances allow us to **adjust the positions of covered joints** with inaccurate Z-coordinates.  
 - Once the shoulder, elbow, and hip positions are corrected, we can further propagate these corrections to refine the coordinates of other joints.  
+# Method for Classifying Human Postures
+
+Using the previously obtained **3D joint coordinates**, we can classify body postures based on geometric rules.  
+The classification criteria are as follows:
+
+---
+
+### 1. Arm Position (Close to Body vs. Open)
+- **Reference joints:** Hip, Shoulder, and Elbow  
+- **Rule:** Compute the angle formed by these three joints.  
+  - If the angle **> 30°**, the arm is considered **open**.  
+  - Otherwise, it is considered **close to the body**.
+
+---
+
+### 2. Arm Flexion (Straight vs. Bent)
+- **Reference joints:** Shoulder, Elbow, and Wrist  
+- **Rule:** Compute the angle at the elbow.  
+  - If the angle **< 150°**, the arm is considered **bent**.  
+  - Otherwise, it is considered **straight**.
+
+---
+
+### 3. Leg Position (Together vs. Apart)
+- **Reference joints:** Left/Right Hips and Knees  
+- **Rule:** Form two vectors (hip-to-knee for each leg) and measure their angle.  
+  - If the angle **> 30°**, the legs are considered **apart**.  
+  - Otherwise, the legs are considered **together**.
+
+---
+
+### 4. Leg Flexion (Straight vs. Bent)
+- **Reference joints:** Hip, Knee, and Ankle  
+- **Rule:** Compute the angle at the knee.  
+  - If the angle **< 150°**, the leg is considered **bent**.  
+  - Otherwise, it is considered **straight**.
+
+---
+
+### 5. Body Orientation (Supine vs. Side-lying)
+- **Reference joints:** Left and Right Shoulders  
+- **Rule:** Compare the X and Y coordinate distance between the two shoulders.  
+  - If the distance is **less than half** of the normal supine posture, the body is considered **side-lying**.  
+
+---
+
+### 6. Classification Outcome
+By combining the above binary conditions (arm open/close, arm bent/straight, leg apart/together, leg bent/straight, body supine/side-lying),  
+we can categorize human postures into **32 distinct classes**.
 
