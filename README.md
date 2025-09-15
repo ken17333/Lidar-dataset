@@ -118,5 +118,37 @@ we applied the following **data augmentation techniques** during training:
 
 - **Noise Injection**: Added random noise to the input images to enhance robustness against sensor imperfections and environmental disturbances.
 
+---
+
+### How to Obtain the Final Joint Coordinates
+
+The simplest approach is to directly take the location of the maximum value in the heatmap as the joint position.  
+However, in our method, we use a **weighted sum** formulation.
+
+---
+
+For the \(k\)-th joint, its coordinate \(J_k\) is calculated as:
+
+$$
+J_k = \sum_{z=1}^{D} \sum_{y=1}^{H} \sum_{x=1}^{W} p \cdot \tilde{H}_k(p)
+$$
+
+where:
+- \(p = (x, y, z)\) represents the coordinate position,  
+- \(H, W, D\) are the dimensions of the heatmap,  
+- \(\tilde{H}_k(p)\) is the **normalized heatmap** value at location \(p\).
+
+---
+
+The normalized heatmap \(\tilde{H}_k(p)\) is obtained by applying softmax:
+
+$$
+\tilde{H}_k(p) = \frac{e^{H_k(p)}}{\sum_{z=1}^{D} \sum_{y=1}^{H} \sum_{x=1}^{W} e^{H_k(q)}}
+$$
+
+---
+
+Finally, the resulting coordinate \(J_k\) is mapped back to the original input image coordinates by applying the appropriate scaling factor.
+
 
 
