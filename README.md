@@ -97,3 +97,13 @@ For training, we used a total of **10,000 images**:
 The dataset was **randomly split** into **training** and **testing** sets with an **8:2 ratio**,  
 ensuring that both categories (with and without blanket) were proportionally represented in each subset.
 
+### Data Augmentation Methods
+
+To improve model generalization and increase dataset diversity,  
+we applied the following **data augmentation techniques** during training:
+
+- **Random Flipping**: Randomly flipped images to simulate mirrored postures.  
+- **Random Scaling**: Randomly scaled images to account for variations in subject size and distance from the sensor.  
+- **Noise Injection**: Added random noise to the input images to enhance robustness against sensor imperfections and environmental disturbances.
+
+
