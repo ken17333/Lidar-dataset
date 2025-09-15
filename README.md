@@ -84,7 +84,7 @@ we can categorize human postures into **32 distinct classes**.
 
 ---
 
-### What Defines a Single Data Sample?
+# What Defines a Single Data Sample?
 
 Our LiDAR operates at **30 FPS**.  
 To ensure sufficient variation between consecutive actions,  
@@ -92,7 +92,7 @@ we select frames at an interval of approximately **5 frames** (≈ 0.17 seconds)
 
 ---
 
-### What Data Did We Use for Training?
+# What Data Did We Use for Training?
 
 For training, we used a total of **10,000 images**:  
 - **5,000 images without a blanket**  
@@ -103,7 +103,7 @@ ensuring that both categories (with and without blanket) were proportionally rep
 
 ---
 
-### Data Augmentation Methods
+# Data Augmentation Methods
 
 To improve model generalization and increase dataset diversity,  
 we applied the following **data augmentation techniques** during training:
@@ -120,7 +120,7 @@ we applied the following **data augmentation techniques** during training:
 
 ---
 
-### How to Obtain the Final Joint Coordinates
+# How to Obtain the Final Joint Coordinates
 
 The simplest approach is to directly take the location of the maximum value in the heatmap as the joint position.  
 However, in our method, we use a **weighted sum** formulation.
