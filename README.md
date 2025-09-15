@@ -22,8 +22,20 @@ In this case, we can leverage the reference distance information obtained earlie
 - Once the shoulder, elbow, and hip positions are corrected, we can further propagate these corrections to refine the coordinates of other joints.  
 # Method for Classifying Human Postures
 
-Using the previously obtained **3D joint coordinates**, we can classify body postures based on geometric rules.  
-The classification criteria are as follows:
+Using the previously obtained **3D joint coordinates**, we classify body postures based on geometric rules.  
+Since the **Z-axis scale is not equivalent to the X/Y axes**, the Z component of every vector is multiplied by a constant factor `a` before computing distances or angles.  
+
+---
+
+### Vector Normalization with Z-Scaling
+Given two joints with coordinates \((x_1, y_1, z_1)\) and \((x_2, y_2, z_2)\),  
+the adjusted vector is defined as:
+
+\[
+\vec{v} = \big(x_2 - x_1,\; y_2 - y_1,\; a \cdot (z_2 - z_1)\big)
+\]
+
+All subsequent angle calculations are performed using these adjusted vectors.
 
 ---
 
@@ -69,4 +81,3 @@ The classification criteria are as follows:
 ### 6. Classification Outcome
 By combining the above binary conditions (arm open/close, arm bent/straight, leg apart/together, leg bent/straight, body supine/side-lying),  
 we can categorize human postures into **32 distinct classes**.
-
