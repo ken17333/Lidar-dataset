@@ -138,15 +138,12 @@ where:
 - \(H, W, D\) are the dimensions of the heatmap,  
 - $\tilde{H}_k(p)$ is the **normalized heatmap** value at location \(p\).
 
----
 
 The normalized heatmap \(\tilde{H}_k(p)\) is obtained by applying softmax:
 
 $$
 \tilde{H}_k(p) = \frac{e^{H_k(p)}}{\sum_{z=1}^{D} \sum_{y=1}^{H} \sum_{x=1}^{W} e^{H_k(q)}}
 $$
-
----
 
 Finally, the resulting coordinate \(J_k\) is mapped back to the original input image coordinates by applying the appropriate scaling factor.
 
