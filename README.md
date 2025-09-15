@@ -28,7 +28,7 @@ Since the **Z-axis scale is not equivalent to the X/Y axes**, the Z component of
 ---
 
 ### Vector Normalization with Z-Scaling
-Given two joints with coordinates $ (x_1,\; y_1,\; z_1) $ and $ (x_2,\; y_2,\; z_2) $,  
+Given two joints with coordinates $\left(x_1,\; y_1,\; z_1\right)$ and $\left(x_2,\; y_2,\; z_2\right)$,  
 the adjusted vector is defined as:
 
 $$
