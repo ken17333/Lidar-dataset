@@ -31,9 +31,9 @@ Since the **Z-axis scale is not equivalent to the X/Y axes**, the Z component of
 Given two joints with coordinates \((x_1, y_1, z_1)\) and \((x_2, y_2, z_2)\),  
 the adjusted vector is defined as:
 
-\[
+$$
 \vec{v} = \big(x_2 - x_1,\; y_2 - y_1,\; a \cdot (z_2 - z_1)\big)
-\]
+$$
 
 All subsequent angle calculations are performed using these adjusted vectors.
 
